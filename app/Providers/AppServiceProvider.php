@@ -21,6 +21,7 @@ class AppServiceProvider extends ServiceProvider
         // });
         $base_uri = env('API_ENDPOINT');
         $headers = ['token' => env('API_TOKEN')];
+
         $this->app->singleton('GuzzleHttp\Client', function(){
             return new Client([$base_uri, $headers]);
 
